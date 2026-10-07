@@ -14,7 +14,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        throw new NotImplementedException();
+        float hAxis = Input.GetAxisRaw("Horizontal");
+        
+        Vector3 moveVector = new Vector3(hAxis, 0, 0);
+        
+        transform.Translate(moveVector * moveSpeed * Time.deltaTime);
     }
 
 
@@ -29,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
-        
-        rigid.linearVelocityX = moveSpeed * dir.x;
     }
 
 
@@ -38,9 +40,5 @@ public class PlayerMovement : MonoBehaviour
     {
         rigid.AddForceY(jumpPower, ForceMode2D.Impulse);
     }
-
-    private void OnMove(InputValue value)
-    {
-        dir =  value.Get<Vector2>();
-    }
+    
 }
