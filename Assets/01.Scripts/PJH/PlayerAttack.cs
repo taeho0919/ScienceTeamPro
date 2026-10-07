@@ -5,32 +5,38 @@ using DG.Tweening;
 public class PlayerAttack : MonoBehaviour
 {
     
+    [SerializeField] private float wtmTime, endValue;
+    
     private Sequence _sequence;
     private Vector3 relativePos;
 
     private Vector3 originPos;
 
+    private bool _isAttacking;
+
     private void Start()
     {
         originPos = transform.position;
-        _sequence = DOTween.Sequence();
     }
 
     private void Attack()
     {
-        _sequence.Kill();
+        _isAttacking = true;
+        _sequence = DOTween.Sequence();
         
         Vector3 attackDir = relativePos - transform.position;
         attackDir.Normalize();
-        _sequence.Append(transform.DOMove(transform.position + attackDir * 3 , 0.3f));
-        _sequence.AppendCallback(() => transform.DOMove(originPos, 0.3f));
+        _sequence.Append(transform.DOScaleY(endValue, wtmTime));
+        _sequence.Append(transform.DOScaleY(1f, wtmTime)).OnComplete(() => _isAttacking = false); 
+        
     }
 
     private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            Attack();
+            if (!_isAttacking)
+                Attack();
         }
     }
 
@@ -45,6 +51,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void HandleLook(Vector2 lookPos)
     {
+        if(_isAttacking) return;
         Vector2 worldPos = Camera.main.ScreenToWorldPoint(lookPos);
         relativePos = worldPos - (Vector2)transform.position;
         
