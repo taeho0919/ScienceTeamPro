@@ -22,6 +22,7 @@ public class KTH_HealthSystem : MonoBehaviour
     public Action OnHealthChange;
     
     public bool IsInvincible { get; set; }
+    public bool HealOnHit { get; set; }
     
     private void Awake()
     {
@@ -42,7 +43,14 @@ public class KTH_HealthSystem : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if(health<=0)return;
         if (IsInvincible) return;
+
+        if (HealOnHit)
+        {
+            Heal(damage);
+            return;
+        }
         
         health=Mathf.Max(health-damage,0);
         
