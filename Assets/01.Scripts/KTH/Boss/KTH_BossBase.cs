@@ -11,27 +11,14 @@ public class KTH_BossBase : MonoBehaviour
 
     private KTH_BossPattern curPattern;
     private KTH_BossPattern lastPattern;
-    private KTH_HealthSystem healthSystem;
 
     private void Awake()
     {
-        healthSystem = GetComponent<KTH_HealthSystem>();
-
         foreach (var pattern in patterns)
         {
             pattern.gameObject.SetActive(false);
             pattern.OnPatternEnd += HandlePatternEnd;
         }
-    }
-
-    private void OnEnable()
-    {
-        if (healthSystem != null) healthSystem.OnDeath += HandleDeath;
-    }
-
-    private void OnDisable()
-    {
-        if (healthSystem != null) healthSystem.OnDeath -= HandleDeath;
     }
 
     private void Start()
@@ -67,7 +54,7 @@ public class KTH_BossBase : MonoBehaviour
         curPattern.gameObject.SetActive(true);
     }
 
-    private void HandleDeath()
+    public void StopPatterns()
     {
         StopAllCoroutines();
         if (curPattern != null) curPattern.gameObject.SetActive(false);

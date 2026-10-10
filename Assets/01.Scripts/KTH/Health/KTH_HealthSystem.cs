@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -17,16 +16,18 @@ public class KTH_HealthSystem : MonoBehaviour
     [SerializeField]private Volume volume;
     private Vignette vignette;
     private int maxHealth;
-    [SerializeField] private float lowHealthVignette = 0.49f, vignetteSpeed = 1f,InvinTime = 0.5f;
+    [SerializeField] private float lowHealthVignette = 0.49f, vignetteSpeed = 1f;
     
     public Action OnDeath;
-    public Action<int,int> OnHealthChange;
-
-    private bool isInvin=false;
+    public Action OnHealthChange;
+    
+    public bool IsInvincible { get; set; }
     
     private void Awake()
     {
         maxHealth = health;
+        
+        if(ht==HealthType.Boss)return;
         
         if (volume.profile.TryGet<Vignette>(out var Outvignette))
         {
@@ -41,25 +42,22 @@ public class KTH_HealthSystem : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if(isInvin&&ht == HealthType.Player)return;
+        if (IsInvincible) return;
         
         health=Mathf.Max(health-damage,0);
         
-        OnHealthChange?.Invoke(health,maxHealth);
+        OnHealthChange?.Invoke();
         
         if (health <= 0)
         {
             OnDeath?.Invoke();
         }
-
-        StartCoroutine(IsInvin());
     }
 
     public void Heal(int heal)
     {
         if(health==0)return;
         health=Mathf.Min(health+heal,maxHealth);
-        OnHealthChange?.Invoke(health,maxHealth);
     }
 
     private void CheckDamageEffect()
@@ -69,12 +67,5 @@ public class KTH_HealthSystem : MonoBehaviour
         
         float target = health == 1 ? lowHealthVignette : 0f;
         vignette.intensity.value = Mathf.MoveTowards(vignette.intensity.value, target, vignetteSpeed * Time.deltaTime);
-    }
-
-    private IEnumerator IsInvin()
-    {
-        isInvin = true;
-        yield return new WaitForSeconds(InvinTime);
-        isInvin=false;  
     }
 }
