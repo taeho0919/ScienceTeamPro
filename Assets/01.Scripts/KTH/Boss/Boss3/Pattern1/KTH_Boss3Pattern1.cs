@@ -6,7 +6,7 @@ using UnityEngine.Splines;
 public class KTH_Boss3Pattern1 : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private Vector3 originalPos;
+    [SerializeField]private Transform target;
     [SerializeField]private Animator animator;
     private SplineAnimate splineanim;
 
@@ -18,7 +18,6 @@ public class KTH_Boss3Pattern1 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         splineanim=GetComponentInParent<SplineAnimate>();
         rb.gravityScale = 0;
-        originalPos = transform.position;
     }
 
     private void OnEnable()
@@ -31,8 +30,7 @@ public class KTH_Boss3Pattern1 : MonoBehaviour
         animator.SetBool(IsEnd,true);
         splineanim.Play();
         rb.gravityScale = 0;
-        transform.position = originalPos;
-        
+        transform.position = target.position;
         
     }
     
