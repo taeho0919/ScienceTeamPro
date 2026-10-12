@@ -23,6 +23,20 @@ public class KTH_Base3 : MonoBehaviour
         StartCoroutine(Strike());
     }
 
+    public void FitHeight(float bottom, float top)
+    {
+        float height = top - bottom;
+        if (height <= 0f) return;
+
+        Vector3 scale = transform.localScale;
+        scale.y *= height / sr.bounds.size.y;
+        transform.localScale = scale;
+
+        Vector3 pos = transform.position;
+        pos.y += bottom - sr.bounds.min.y;
+        transform.position = pos;
+    }
+
     private IEnumerator Strike()
     {
         yield return new WaitForSeconds(delay);

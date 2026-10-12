@@ -31,8 +31,10 @@ public class KTH_PlayerInvincible : MonoBehaviour
 
     private void StartInvincible()
     {
+        KTH_CameraShakeManager.Instance.Shake(0.5f);
         StopAllCoroutines();
         StartCoroutine(InvincibleRoutine());
+        
     }
 
     private IEnumerator InvincibleRoutine()

@@ -16,6 +16,7 @@ public class KTH_BaseAttack1 : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void OnEnable()

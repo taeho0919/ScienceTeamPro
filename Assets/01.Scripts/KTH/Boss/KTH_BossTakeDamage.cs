@@ -27,6 +27,7 @@ public class KTH_BossTakeDamage : MonoBehaviour
     private void ChangeColor()
     {
         sr.color = color;
+        KTH_CameraShakeManager.Instance.Shake(0.3f);
         StartCoroutine(ChangeBaseColor());
     }
 
@@ -35,4 +36,6 @@ public class KTH_BossTakeDamage : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         sr.color = baseColor;
     }
+
+    
 }
