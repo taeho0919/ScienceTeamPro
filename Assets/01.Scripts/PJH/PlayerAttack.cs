@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     
     [SerializeField] private float wtmTime, endValue;
+    [SerializeField] private SpriteRenderer magenticRenderer;
     
     private Sequence _sequence;
     private Vector3 relativePos;
@@ -28,7 +29,6 @@ public class PlayerAttack : MonoBehaviour
         attackDir.Normalize();
         _sequence.Append(transform.DOScaleY(endValue, wtmTime));
         _sequence.Append(transform.DOScaleY(1f, wtmTime)).OnComplete(() => _isAttacking = false); 
-        
     }
 
     private void Update()
