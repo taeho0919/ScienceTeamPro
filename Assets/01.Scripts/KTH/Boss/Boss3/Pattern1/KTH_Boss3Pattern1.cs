@@ -22,7 +22,9 @@ public class KTH_Boss3Pattern1 : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(FanFire());
+
+        FanFire();
+
     }
 
     private void OnDisable()
@@ -34,12 +36,11 @@ public class KTH_Boss3Pattern1 : MonoBehaviour
         
     }
     
-    private IEnumerator FanFire()
+    private void FanFire()
     {
         animator.SetBool(IsEnd,false);
         splineanim.Pause();
         animator.SetTrigger(IsAttack1Hash);
-        yield return new WaitForSeconds(0.5f);
         rb.gravityScale = 1;
         rb.AddForce(Vector2.left * 100,ForceMode2D.Impulse);
         
