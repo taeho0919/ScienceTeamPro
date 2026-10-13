@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0faa93dd284073245895e2e6458196cb
+guid: 8a6724d642adea84594a8a3d75442634
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 129944738862451011
-    second: RampHdotN_0
+      213: -2203318042713849410
+    second: night_lab_bg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RampHdotN_0
+      name: night_lab_bg_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 349c3503d08adc100800000000000000
-      internalID: 129944738862451011
+      spriteID: eb105d0f9ed3c61e0800000000000000
+      internalID: -2203318042713849410
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RampHdotN_0: 129944738862451011
+      night_lab_bg_0: -2203318042713849410
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Scenes/PJH/PJHScene.unity
     guid: 73fd56dd2124a8145a4c1ed3292c5179
+  - enabled: 1
+    path: Assets/00.Scenes/GameScene/Boss1Scene.unity
+    guid: 895cc70c7d49b7243830ec31c0565ac6
+  - enabled: 1
+    path: Assets/00.Scenes/GameScene/EndingScene.unity
+    guid: 9f38906762ff729408d13a0509ede52f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

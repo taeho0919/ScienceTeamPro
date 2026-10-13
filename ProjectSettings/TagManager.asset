@@ -8,6 +8,7 @@ TagManager:
   - Bakery
   - Wall
   - Magenetic
+  - IWall
   layers:
   - Default
   - TransparentFX
@@ -42,6 +43,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 4176327095
+    locked: 0
+  - name: Ground
+    uniqueID: 694457405
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
