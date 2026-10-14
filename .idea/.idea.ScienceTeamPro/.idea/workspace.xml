@@ -12,9 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="912b50de-6583-4ef7-9743-ba9e51130c4d" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ScienceTeamPro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ScienceTeamPro/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KHG/Asset/스크린샷 2026-10-14 124835.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KHG/Asset/스크린샷 2026-10-14 124835.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KHG/Audio/BGM.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KHG/Audio/BGM.mixer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/KHG/Scene/MainUI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KHG/Scene/MainUI.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KHG/Script/BGMManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KHG/Script/BGMManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KHG/Script/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KHG/Script/MainMenu.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@cec3688a7c38/Runtime/UGUI/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/gainproject/Assets/02.Script/BGM/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -104,6 +106,7 @@
       <workItem from="1791939892298" duration="31000" />
       <workItem from="1791947447655" duration="151000" />
       <workItem from="1791947669037" duration="1137000" />
+      <workItem from="1791984047084" duration="998000" />
     </task>
     <servers />
   </component>
