@@ -14,7 +14,7 @@ public class KTH_Bakery : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocityX = -5f;
+        rb.linearVelocityX = -10f;
     }
 
     private void OnDisable()
