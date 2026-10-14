@@ -8,6 +8,7 @@ public class CoilCheck : MonoBehaviour
     private bool _canAttack = true;
 
   
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Magenetic") && _canAttack)

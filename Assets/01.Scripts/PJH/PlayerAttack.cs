@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         _isAttacking = true;
-        _sequence = DOTween.Sequence();
+        _sequence = DOTween.Sequence().SetLink(gameObject);
         
         Vector3 attackDir = relativePos - transform.position;
         attackDir.Normalize();
