@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Magenetic
   - IWall
+  - Ground
   layers:
   - Default
   - TransparentFX
