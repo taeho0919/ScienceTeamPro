@@ -32,5 +32,10 @@ public class KTH_DontDestroy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (scene.name == "DeathScene")
+        {
+            Destroy(gameObject);
+        }
     }
 }

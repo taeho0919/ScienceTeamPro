@@ -1,10 +1,14 @@
 using System;
+using System.Collections;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KTH_PlayerDead : MonoBehaviour
 {
+    [SerializeField] private SceneAsset scene;
     private KTH_HealthSystem hs;
-
+    
     private void Awake()
     {
         hs = GetComponent<KTH_HealthSystem>();
@@ -18,10 +22,16 @@ public class KTH_PlayerDead : MonoBehaviour
     private void OnDisable()
     {
         hs.OnDeath -= OnPlayerDeath;
+        OnDeath();
     }
     
     private void OnPlayerDeath()
     {
-        Destroy(gameObject);       
+        gameObject.SetActive(false);       
+    }
+
+    private void OnDeath()
+    {
+        SceneManager.LoadScene(scene.name);
     }
 }
