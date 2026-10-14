@@ -19,6 +19,7 @@ public class KTH_HealthSystem : MonoBehaviour
     [SerializeField] private float lowHealthVignette = 0.49f, vignetteSpeed = 1f;
     
     public Action OnDeath;
+    public Action OnPlayerDeath;
     public Action OnHealthChange;
     
     public bool IsInvincible { get; set; }
@@ -56,9 +57,15 @@ public class KTH_HealthSystem : MonoBehaviour
         
         OnHealthChange?.Invoke();
         
-        if (health <= 0)
+        if (health <= 0&&ht == HealthType.Boss)
         {
+            Debug.Log("Boss Dead");
             OnDeath?.Invoke();
+        }
+        else if (health <= 0 && ht == HealthType.Player)
+        {
+            Debug.Log("Player Dead");
+            OnPlayerDeath?.Invoke();
         }
     }
 

@@ -16,22 +16,23 @@ public class KTH_PlayerDead : MonoBehaviour
 
     private void OnEnable()
     {
-        hs.OnDeath+= OnPlayerDeath;
+        hs.OnPlayerDeath+= OnPlayerDeath;
     }
 
     private void OnDisable()
     {
-        hs.OnDeath -= OnPlayerDeath;
-        OnDeath();
+        hs.OnPlayerDeath -= OnPlayerDeath;
     }
     
     private void OnPlayerDeath()
     {
         gameObject.SetActive(false);       
+        OnDeath();
     }
 
     private void OnDeath()
     {
+        Debug.Log("Player Dead");
         SceneManager.LoadScene(scene.name);
     }
 }
