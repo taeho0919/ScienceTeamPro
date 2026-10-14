@@ -43,7 +43,7 @@ public class KTH_Boss3Pattern2 : MonoBehaviour
         Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.AddForce(new Vector2(windDirection.x,windDirection.y).normalized*windPower, ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(windDirection.x,windDirection.y).normalized*windPower, ForceMode2D.Force);
         }
     }
 }
