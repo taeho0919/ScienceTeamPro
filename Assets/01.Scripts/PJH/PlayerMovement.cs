@@ -14,10 +14,17 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 dir;
     private float defaultGravityScale;
 
+    private Animator animator;
+    
+    [Header("Animation Components")]
+    private readonly int idleHash = Animator.StringToHash("idle");
+    private readonly int jumpHash = Animator.StringToHash("jump");
+    private int walkHash = Animator.StringToHash("IsMove");
 
     private void Awake()
     {
         defaultGravityScale = rigid.gravityScale;
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -60,5 +67,15 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue value)
     {
         dir =  value.Get<Vector2>();
+
+        if (value.isPressed)
+        {
+            animator.SetBool(walkHash, true);
+        }
+        else
+        {
+            animator.SetBool(walkHash, false);
+        }
+        
     }
 }
