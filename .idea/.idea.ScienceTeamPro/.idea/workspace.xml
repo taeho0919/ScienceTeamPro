@@ -11,10 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="912b50de-6583-4ef7-9743-ba9e51130c4d" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/KHG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/KHG/MainUI.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/KHG/MainUI.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ScienceTeamPro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ScienceTeamPro/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KHG/Scene/MainUI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KHG/Scene/MainUI.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KHG/Script/BGMManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KHG/Script/BGMManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KHG/Script/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KHG/Script/MainMenu.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/gainproject/Assets/02.Script/BGM/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7,
@@ -99,6 +102,8 @@
       <updated>1791874717415</updated>
       <workItem from="1791874722080" duration="1539000" />
       <workItem from="1791939892298" duration="31000" />
+      <workItem from="1791947447655" duration="151000" />
+      <workItem from="1791947669037" duration="1137000" />
     </task>
     <servers />
   </component>

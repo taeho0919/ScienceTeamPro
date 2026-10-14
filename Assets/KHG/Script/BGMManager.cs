@@ -3,27 +3,38 @@ using UnityEngine.UI;
 
 public class BGMManager : MonoBehaviour
 {
-    public AudioSource bgmAudioSource; 
-        public Slider volumeSlider;
-    
-        private void Awake()
+    public static BGMManager Instance;
+
+    public AudioSource bgmAudioSource;
+    public Slider volumeSlider;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
         {
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
+            return;
         }
-    
-        void Start()
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        if (volumeSlider != null && bgmAudioSource != null)
         {
-            if (volumeSlider != null && bgmAudioSource != null)
-            {
-                bgmAudioSource.volume = volumeSlider.value;
-            }
+            volumeSlider.value = bgmAudioSource.volume;
+            volumeSlider.onValueChanged.AddListener(SetVolume);
         }
-    
-        public void SetVolume(float volume)
+    }
+
+    public void SetVolume(float volume)
+    {
+        if (bgmAudioSource != null)
         {
-            if (bgmAudioSource != null)
-            {
-                bgmAudioSource.volume = volume;
-            }
+            bgmAudioSource.volume = volume;
         }
+    }
+
 }

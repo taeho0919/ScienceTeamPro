@@ -8,21 +8,17 @@ public class MainMenu : MonoBehaviour
 {
     [Header("UI Panels")]
     [SerializeField] private GameObject settingsPanel;
-    
-    [Header("AudioSetting")]
-    [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private Slider volumeSlider;
-    [SerializeField] private AudioSource audioSource;
 
+    [Header("Scene Setting")]
     [SerializeField] private string scenenName;
 
-    private void Awake()
+    private void Start()
     {
-        Buttons();
-        OpenSettings();
-        CloseSettings();
+        if (settingsPanel != null)
+        {
+            settingsPanel.SetActive(false);
+        }
     }
-
     private void Buttons()
     {
         if(scenenName != "")return;
@@ -34,13 +30,24 @@ public class MainMenu : MonoBehaviour
         
         SceneManager.LoadScene(scenenName);
     }
-    private void OpenSettings()
+    public void OpenSettings()
     {
-        settingsPanel.SetActive(true);
+        if (settingsPanel != null)
+        {
+            settingsPanel.SetActive(true);
+        }
     }
 
-    private void CloseSettings()
+    public void CloseSettings()
     {
-        settingsPanel.SetActive(false);
+        if (settingsPanel != null)
+        {
+            settingsPanel.SetActive(false);
+        }
     }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
 }
