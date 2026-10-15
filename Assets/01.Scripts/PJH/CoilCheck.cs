@@ -5,6 +5,8 @@ using UnityEngine;
 public class CoilCheck : MonoBehaviour
 { 
     [SerializeField] private KTH_HealthSystem kth_healthSystem;
+    [SerializeField] private int baseDamage;
+    [SerializeField] private int bonusDamage;
     private bool _canAttack = true;
 
   
@@ -12,7 +14,7 @@ public class CoilCheck : MonoBehaviour
     {
         if (other.CompareTag("Magenetic") && _canAttack)
         {
-            kth_healthSystem.TakeDamage(1);
+            kth_healthSystem.TakeDamage(baseDamage);
             StartCoroutine(WaitCanAttack());
         }
             
