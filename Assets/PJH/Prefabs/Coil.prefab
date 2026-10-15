@@ -184,7 +184,7 @@ MonoBehaviour:
   maxY: 1.5
   minY: -20
   moveDuration: 4
-  speed: 5
+  speed: 0
 --- !u!1 &5511866368797800332
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +277,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kth_healthSystem: {fileID: 0}
+  baseDamage: 1
+  bonusDamage: 1
+  maxLevel: 8
+  decayDelay: 4.5
+  decayInterval: 1.5
 --- !u!1 &6483507494492423046
 GameObject:
   m_ObjectHideFlags: 0
