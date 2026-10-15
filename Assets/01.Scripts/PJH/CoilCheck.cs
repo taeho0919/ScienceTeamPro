@@ -16,13 +16,15 @@ public class CoilCheck : MonoBehaviour
     [SerializeField] private float decayDelay = 4.5f;
     [SerializeField] private float decayInterval = 1.5f;
 
-    private int _inducationLevel = 0;
+    private int inducationLevel = 0;
+    
+    public int _inducationLevel { get; private set; } = 0;
     private float _decayTimer;
     
     
-    
-    
     private bool _canAttack = true;
+
+    public event Action OnChanged;  
 
 
     private void Update()
@@ -34,6 +36,7 @@ public class CoilCheck : MonoBehaviour
         if (_decayTimer <= 0f)
         {
             _inducationLevel--;
+            OnChanged?.Invoke();
             _decayTimer = decayInterval;
         }
     }
