@@ -7,6 +7,7 @@ public class KTH_DontDestroy : MonoBehaviour
     [SerializeField] private Sprite[] backgrounds;
     [SerializeField]private SpriteRenderer backGround;
     [SerializeField] private GameObject[] boss;
+    private Transform player;
     private int i = 0;
     private static KTH_DontDestroy instance;
 

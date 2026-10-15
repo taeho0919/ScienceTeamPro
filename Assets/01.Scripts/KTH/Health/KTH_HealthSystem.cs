@@ -1,7 +1,9 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 enum HealthType
 {
@@ -17,6 +19,7 @@ public class KTH_HealthSystem : MonoBehaviour
     private Vignette vignette;
     private int maxHealth;
     [SerializeField] private float lowHealthVignette = 0.49f, vignetteSpeed = 1f;
+    [SerializeField] private Image hpBar;
     
     public Action OnDeath;
     public Action OnPlayerDeath;
@@ -24,6 +27,8 @@ public class KTH_HealthSystem : MonoBehaviour
     
     public bool IsInvincible { get; set; }
     public bool HealOnHit { get; set; }
+    
+    private Tween hpBarTween;
     
     private void Awake()
     {
@@ -35,6 +40,11 @@ public class KTH_HealthSystem : MonoBehaviour
         {
             vignette= Outvignette;
         }
+    }
+
+    private void OnDisable()
+    {
+        hpBarTween.Kill();
     }
 
     private void Update()
@@ -57,6 +67,8 @@ public class KTH_HealthSystem : MonoBehaviour
         
         OnHealthChange?.Invoke();
         
+        UpdateHpBarAnimated();
+        
         if (health <= 0&&ht == HealthType.Boss)
         {
             Debug.Log("Boss Dead");
@@ -72,6 +84,9 @@ public class KTH_HealthSystem : MonoBehaviour
     public void Heal(int heal)
     {
         if(health==0)return;
+        
+        UpdateHpBarAnimated();
+        
         health=Mathf.Min(health+heal,maxHealth);
     }
 
@@ -82,5 +97,15 @@ public class KTH_HealthSystem : MonoBehaviour
         
         float target = health == 1 ? lowHealthVignette : 0f;
         vignette.intensity.value = Mathf.MoveTowards(vignette.intensity.value, target, vignetteSpeed * Time.deltaTime);
+    }
+
+    private void UpdateHpBarAnimated()
+    {
+        float targetFill = Mathf.Clamp01((float)health / maxHealth);
+
+        hpBarTween?.Kill();
+        hpBarTween = hpBar
+            .DOFillAmount(targetFill, 0.5f)
+            .SetEase(Ease.OutQuad);
     }
 }
