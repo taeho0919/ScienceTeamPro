@@ -76,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
     {
         dir =  value.Get<Vector2>();
 
-        Debug.Log(dir.x);
         if (MathF.Abs(dir.x) > 0.1f)
         {
             animator.SetBool(walkHash, true);
