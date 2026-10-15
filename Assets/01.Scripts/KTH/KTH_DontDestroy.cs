@@ -8,10 +8,24 @@ public class KTH_DontDestroy : MonoBehaviour
     [SerializeField]private SpriteRenderer backGround;
     [SerializeField] private GameObject[] boss;
     private int i = 0;
-    
+    private static KTH_DontDestroy instance;
+
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        if (instance == this) instance = null;
     }
 
     private void OnEnable()
@@ -26,10 +40,17 @@ public class KTH_DontDestroy : MonoBehaviour
 
     private void OnLoadScene(Scene scene, LoadSceneMode mode)
     {
-        
-        
-        backGround.sprite = backgrounds[i];
-        i++;
+        if (scene.name == "EndingScene" || scene.name == "DeathScene")
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if (i < backgrounds.Length)
+        {
+            backGround.sprite = backgrounds[i];
+            i++;
+        }
 
         if (scene.name == "Boss1Scene")
         {
@@ -48,18 +69,6 @@ public class KTH_DontDestroy : MonoBehaviour
             boss[2].SetActive(true);
             boss[1].SetActive(false);
             boss[0].SetActive(false);
-        }
-        
-        if (scene.name == "EndingScene")
-        {
-            Destroy(gameObject);
-            i = 0;
-        }
-
-        if (scene.name == "DeathScene")
-        {
-            Destroy(gameObject);
-            i = 0;
         }
     }
 }
