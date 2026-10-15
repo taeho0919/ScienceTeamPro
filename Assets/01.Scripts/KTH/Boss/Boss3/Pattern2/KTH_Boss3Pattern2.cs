@@ -4,8 +4,9 @@ using UnityEngine.Splines;
 
 public class KTH_Boss3Pattern2 : MonoBehaviour
 {
-    [SerializeField] private float windPower=5f;
+    [SerializeField] private float windSpeed = 6f;
     private Vector3 windDirection=Vector3.left;
+    private Rigidbody2D playerRb;
     
     private Animator animator;
     private SplineAnimate splineAnimate;
@@ -34,16 +35,26 @@ public class KTH_Boss3Pattern2 : MonoBehaviour
         splineAnimate.Play();
         animator.SetBool(AttackEndHash,true);
         ps.Stop();
+        playerRb = null;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void FixedUpdate()
     {
-        if(!(other.CompareTag("Player")))return;
-        
-        Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.AddForce(new Vector2(windDirection.x,windDirection.y).normalized*windPower, ForceMode2D.Impulse);
-        }
+        if (playerRb == null) return;
+
+        Vector2 dir = new Vector2(windDirection.x, windDirection.y).normalized;
+        playerRb.position += dir * windSpeed * Time.fixedDeltaTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        playerRb = other.attachedRigidbody;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (other.attachedRigidbody == playerRb) playerRb = null;
     }
 }

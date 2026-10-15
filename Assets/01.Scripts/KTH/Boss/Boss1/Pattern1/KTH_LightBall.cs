@@ -31,7 +31,7 @@ public class KTH_LightBall : MonoBehaviour
     private void LightBallMove()
     {
         anim.SetTrigger(attack1Hash);
-        tween=transform.DOMove(player.position, 0.5f);
+        tween=transform.DOMove(player.position, 0.5f).SetLink(gameObject);
     }
 
     private void ResetMove()

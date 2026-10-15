@@ -7,6 +7,7 @@ public class KTH_Base3 : MonoBehaviour
     [SerializeField] private float lifeTime = 0.3f;
     [SerializeField] private int damage = 1;
     [SerializeField] private LayerMask hitLayer = ~0;
+    [SerializeField, Range(0f, 1f)] private float hitWidthRatio = 0.5f;
     private Animator animator;
     private SpriteRenderer sr;
     private bool isAttack = false;
@@ -42,22 +43,32 @@ public class KTH_Base3 : MonoBehaviour
         yield return new WaitForSeconds(delay);
         isAttack = true;
         animator.SetBool(AttackHash, true);
+        CheckHit();
         yield return new WaitForSeconds(lifeTime);
         Destroy(gameObject);
     }
 
     private void Update()
     {
+        CheckHit();
+    }
+
+    private void CheckHit()
+    {
         if (!isAttack) return;
 
-        Vector2 top = new Vector2(transform.position.x, sr.bounds.max.y);
-        RaycastHit2D hit = Physics2D.Raycast(top, Vector2.down, sr.bounds.size.y, hitLayer);
-        if (hit.collider == null || !hit.collider.CompareTag("Player")) return;
-
-        if (hit.collider.TryGetComponent(out KTH_HealthSystem hs))
+        Bounds b = sr.bounds;
+        Vector2 size = new Vector2(b.size.x * hitWidthRatio, b.size.y);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(b.center, size, 0f, hitLayer);
+        foreach (Collider2D col in hits)
         {
+            if (!col.CompareTag("Player")) continue;
+            if (!col.TryGetComponent(out KTH_HealthSystem hs)) continue;
+            if (hs.IsInvincible) return;
+
             hs.TakeDamage(damage);
             isAttack = false;
+            return;
         }
     }
 
@@ -66,7 +77,8 @@ public class KTH_Base3 : MonoBehaviour
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         if (renderer == null) return;
 
+        Bounds b = renderer.bounds;
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(new Vector3(transform.position.x, renderer.bounds.max.y, 0f), new Vector3(transform.position.x, renderer.bounds.min.y, 0f));
+        Gizmos.DrawWireCube(b.center, new Vector3(b.size.x * hitWidthRatio, b.size.y, 0f));
     }
 }

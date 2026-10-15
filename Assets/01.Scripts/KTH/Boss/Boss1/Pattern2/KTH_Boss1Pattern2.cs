@@ -45,7 +45,7 @@ public class KTH_Boss1Pattern2 : MonoBehaviour
         Transform boss = rb.transform;
         swingTween?.Kill();
         float angle = Random.Range(-swingAngle, swingAngle);
-        swingTween = boss.DORotate(new Vector3(0f, 0f, angle), swingTime).SetEase(Ease.OutSine);
+        swingTween = boss.DORotate(new Vector3(0f, 0f, angle), swingTime).SetEase(Ease.OutSine).SetLink(boss.gameObject);
     }
 
     private void TurnOn()
@@ -54,7 +54,7 @@ public class KTH_Boss1Pattern2 : MonoBehaviour
         swingTween?.Kill();
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
-        swingTween = rb.transform.DORotate(Vector3.zero, resetTime).SetEase(Ease.OutSine);
+        swingTween = rb.transform.DORotate(Vector3.zero, resetTime).SetEase(Ease.OutSine).SetLink(rb.gameObject);
         
         rb.gravityScale = 0;
         anim.SetBool(IsAttackHash,false);

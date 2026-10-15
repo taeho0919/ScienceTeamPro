@@ -235,7 +235,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: c4a1defaa8ad26344bc8ce23db7f6651, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -308,7 +308,7 @@ MonoBehaviour:
   rigid: {fileID: 1434507983496393814}
   groundChecker: {fileID: 6722461256026413782}
   moveSpeed: 20
-  jumpPower: 9
+  jumpPower: 30
   lowJumpMultiplier: 1
   fallGravityIncrease: 4
   maxGravityScale: 3
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wtmTime: 0.15
-  endValue: 3.8
+  endValue: 5
   magenticRenderer: {fileID: 0}
 --- !u!114 &904922746038683630
 MonoBehaviour:

@@ -33,6 +33,7 @@ public class KTH_BossDead : MonoBehaviour
 
     private void BossDead()
     {
+        Debug.Log("Boss Dead");
         
         bossBase.StopPatterns();
         splineanim.Pause();
