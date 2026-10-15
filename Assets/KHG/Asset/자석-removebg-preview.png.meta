@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/KHG/Asset/자석-removebg-preview.png.meta
 guid: d2388c37f9bb98d41ac3051fe2c17335
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2383100029521501795
     second: "\uC790\uC11D-removebg-preview_0"
-========
-guid: 68db5ab6a62e26544a69190cf0cf954b
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 3522272831751238054
-    second: whiteImage_0
->>>>>>>> base:Assets/PJH/Sprite/whiteImage.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 36
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,7 +100,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:Assets/KHG/Asset/자석-removebg-preview.png.meta
       name: "\uC790\uC11D-removebg-preview_0"
       rect:
         serializedVersion: 2
@@ -117,30 +107,16 @@ TextureImporter:
         y: 161
         width: 163
         height: 44
-========
-      name: whiteImage_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
->>>>>>>> base:Assets/PJH/Sprite/whiteImage.png.meta
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 80, y: 0, z: 80, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:Assets/KHG/Asset/자석-removebg-preview.png.meta
       spriteID: d91e52c36278deed0800000000000000
       internalID: -2383100029521501795
-========
-      spriteID: 6a1ba8a8a70a1e030800000000000000
-      internalID: 3522272831751238054
->>>>>>>> base:Assets/PJH/Sprite/whiteImage.png.meta
       vertices: []
       indices: 
       edges: []
@@ -149,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2840ed5a9ddab194e98bc81d9408bc02
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -159,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< HEAD:Assets/KHG/Asset/자석-removebg-preview.png.meta
       "\uC790\uC11D-removebg-preview_0": -2383100029521501795
-========
-      whiteImage_0: 3522272831751238054
->>>>>>>> base:Assets/PJH/Sprite/whiteImage.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
