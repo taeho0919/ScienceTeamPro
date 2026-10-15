@@ -12,7 +12,6 @@ namespace _01.Scripts.PJH
         [SerializeField] private float minY;
         [SerializeField] private float moveDuration;
         [SerializeField] private float speed;
-        [SerializeField] private ScriptableLogger logger;
     
         private float _direction = 1f;  
 
@@ -23,7 +22,6 @@ namespace _01.Scripts.PJH
 
             if (Mathf.Approximately(transform.position.y, minY) || Mathf.Approximately(transform.position.y, maxY))
                 _direction *= -1f;
-            logger.Log("s");
         }
     }
 }
