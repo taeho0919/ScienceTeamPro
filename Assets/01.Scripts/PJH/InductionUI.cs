@@ -13,7 +13,7 @@ public class InductionUI : MonoBehaviour
     [Header("유도전력 UI")]
     [SerializeField] private Image[] inductions;
 
-    private int currentLevel;
+    private int _currentLevel;
 
 
     private void Start()
@@ -36,12 +36,12 @@ public class InductionUI : MonoBehaviour
 
     public void Update()
     {
-        ChangeColor(coilCheck._inducationLevel);
+        ChangeColor(coilCheck.InducationLevel);
     }
 
     private void ChangeColor(int level)
     {
-        currentLevel = level;
+        _currentLevel = level;
         if (level <= 0) return;
         for (int i = 0; i < level; i++)
         {
