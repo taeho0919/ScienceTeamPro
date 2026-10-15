@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         Vector3 attackDir = relativePos - transform.position;
         attackDir.Normalize();
         _sequence.Append(transform.DOScaleY(endValue, wtmTime));
-        _sequence.Append(transform.DOScaleY(1f, wtmTime)).OnComplete(() => _isAttacking = false); 
+        _sequence.Append(transform.DOScaleY(1f, wtmTime)).OnComplete(() => _isAttacking = false);   
     }
 
     private void Update()
@@ -48,6 +48,13 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("CoilTopDown"))
+        {
+            _sequence.Append(transform.DOScaleY(1f, wtmTime)).OnComplete(() => _isAttacking = false);
+        }
+    }
 
     public void HandleLook(Vector2 lookPos)
     {
