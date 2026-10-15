@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5794960720432323735}
   m_Layer: 0
   m_Name: TopCollider
-  m_TagString: Untagged
+  m_TagString: CoilTopDown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,6 +282,7 @@ MonoBehaviour:
   maxLevel: 8
   decayDelay: 4.5
   decayInterval: 1.5
+  playerHealth: {fileID: 0}
 --- !u!1 &6483507494492423046
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +295,7 @@ GameObject:
   - component: {fileID: 455688408618945678}
   m_Layer: 0
   m_Name: BottomCollider
-  m_TagString: Untagged
+  m_TagString: CoilTopDown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

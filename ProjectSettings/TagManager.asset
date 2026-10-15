@@ -10,6 +10,7 @@ TagManager:
   - Magenetic
   - IWall
   - Ground
+  - CoilTopDown
   layers:
   - Default
   - TransparentFX
