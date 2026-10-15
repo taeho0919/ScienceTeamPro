@@ -15,6 +15,9 @@ public class CoilCheck : MonoBehaviour
     [SerializeField] private int maxLevel;
     [SerializeField] private float decayDelay = 4.5f;
     [SerializeField] private float decayInterval = 1.5f;
+    
+    [Header("플레이어 체력 컴포넌트")]
+    [SerializeField] private KTH_HealthSystem playerHealth;
 
     private int inducationLevel = 0;
     
@@ -24,8 +27,17 @@ public class CoilCheck : MonoBehaviour
     
     private bool _canAttack = true;
 
-    public event Action OnChanged;  
+    public event Action OnChanged;
 
+    private void OnEnable()
+    {
+        playerHealth.OnHealthChange += MinusLevel;
+    }
+
+    private void OnDisable()
+    {
+        playerHealth.OnHealthChange -= MinusLevel;
+    }
 
     private void Update()
     {
@@ -56,6 +68,11 @@ public class CoilCheck : MonoBehaviour
         }
             
             
+    }
+
+    private void MinusLevel()
+    {
+        _inducationLevel--;
     }
 
     private IEnumerator WaitCanAttack()

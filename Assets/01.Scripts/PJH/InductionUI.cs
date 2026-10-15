@@ -16,6 +16,11 @@ public class InductionUI : MonoBehaviour
     private int currentLevel;
 
 
+    private void Start()
+    {
+        Clear();
+    }
+
     private void OnEnable()
     {
         coilCheck.OnChanged += Clear;
