@@ -43,7 +43,7 @@ public class InductionUI : MonoBehaviour
     {
         _currentLevel = level;
         if (level <= 0) return;
-        for (int i = 0; i < level; i++)
+        for (int i = 0; i < Mathf.Min(level, inductions.Length); i++)
         {
             inductions[i].color = changeColor;
         }
