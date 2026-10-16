@@ -8,7 +8,7 @@ public class InductionUI : MonoBehaviour
     [SerializeField] private Color baseColor;
     [SerializeField] private Color changeColor;
     
-    [SerializeField] private CoilCheck coilCheck;
+    [SerializeField] private CoilCheck[] coilChecks;
     
     [Header("유도전력 UI")]
     [SerializeField] private Image[] inductions;
@@ -23,20 +23,31 @@ public class InductionUI : MonoBehaviour
 
     private void OnEnable()
     {
-        coilCheck.OnChanged += Clear;
+        foreach (var coil in coilChecks)
+        {
+            if (coil != null) coil.OnChanged += Clear;
+        }
     }
 
     private void OnDisable()
     {
-        coilCheck.OnChanged -= Clear;
+        foreach (var coil in coilChecks)
+        {
+            if (coil != null) coil.OnChanged -= Clear;
+        }
     }
-    
-    
+
+
 
 
     public void Update()
     {
-        ChangeColor(coilCheck.InducationLevel);
+        int level = 0;
+        foreach (var coil in coilChecks)
+        {
+            if (coil != null && coil.isActiveAndEnabled) level = Mathf.Max(level, coil.InducationLevel);
+        }
+        ChangeColor(level);
     }
 
     private void ChangeColor(int level)

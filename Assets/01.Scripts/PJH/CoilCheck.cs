@@ -56,6 +56,9 @@ public class CoilCheck : MonoBehaviour
     private void OnDisable()
     {
         if (playerHealth != null) playerHealth.OnHealthChange -= MinusLevel;
+        InducationLevel = 0;
+        _canAttack = true;
+        OnChanged?.Invoke();
     }
 
     private void Update()
