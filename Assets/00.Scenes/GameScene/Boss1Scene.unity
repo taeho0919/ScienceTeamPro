@@ -305,9 +305,33 @@ PrefabInstance:
       propertyPath: 'coilChecks.Array.data[4]'
       value: 
       objectReference: {fileID: 637617983}
+    - target: {fileID: 3160707896422400859, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 260.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160707896422400859, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -441.9
+      objectReference: {fileID: 0}
     - target: {fileID: 4025518197497516124, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: health
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104332352538924441, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_text
+      value: "\uC720\uB3C4\uB2E8\uACC4"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104332352538924441, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 23f88510e56ee624a8993ad12020a09e, type: 2}
+    - target: {fileID: 4104332352538924441, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7696067864965520384, guid: 23f88510e56ee624a8993ad12020a09e, type: 2}
+    - target: {fileID: 4104332352538924441, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4214821663211496675, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -408,6 +432,10 @@ PrefabInstance:
     - target: {fileID: 7503914526377742815, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_Name
       value: Enviroment
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653027680711311842, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -861.9698
       objectReference: {fileID: 0}
     - target: {fileID: 8021222231097086453, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_AnchorMax.y

@@ -78,6 +78,7 @@ public class CoilCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.CompareTag("Magenetic") && _canAttack)
         {
             InducationLevel = Mathf.Min(InducationLevel + 1, kthCoilData.maxLevel);
