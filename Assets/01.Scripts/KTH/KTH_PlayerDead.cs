@@ -33,6 +33,6 @@ public class KTH_PlayerDead : MonoBehaviour
     private void OnDeath()
     {
         Debug.Log("Player Dead");
-        SceneManager.LoadScene(scene.name);
+        KTH_SceneManager.Instance.LoadSceneWithFade(scene.name);
     }
 }
