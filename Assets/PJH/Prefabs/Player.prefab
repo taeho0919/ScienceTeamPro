@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 1929227203374672042}
   - component: {fileID: 9149278372845028581}
   - component: {fileID: 3533103843102738954}
+  - component: {fileID: 3837459342227110830}
   m_Layer: 9
   m_Name: Magnetic
   m_TagString: Magenetic
@@ -182,6 +183,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6990185, y: 0.9330491}
   m_EdgeRadius: 0
+--- !u!114 &3837459342227110830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127667873944664788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f297fb21ab1ce48b8f7055c88bbdb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magenetAttack: {fileID: 4327373251241464480}
 --- !u!1 &6163525866791261222
 GameObject:
   m_ObjectHideFlags: 0

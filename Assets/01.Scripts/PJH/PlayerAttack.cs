@@ -1,4 +1,5 @@
 using System;
+using _01.Scripts.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
@@ -14,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
     private Vector3 originPos;
 
     private bool _isAttacking;
-
+    private bool _isReturning;
     private void Start()
     {
         originPos = transform.position;
@@ -23,12 +24,18 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         _isAttacking = true;
+        _isReturning = false;
         _sequence = DOTween.Sequence().SetLink(gameObject);
         
         Vector3 attackDir = relativePos - transform.position;
         attackDir.Normalize();
         _sequence.Append(transform.DOScaleY(endValue, wtmTime));
-        _sequence.Append(transform.DOScaleY(1f, wtmTime)).OnComplete(() => _isAttacking = false); 
+        _sequence.AppendCallback(() => _isReturning = true);
+        _sequence.Append(transform.DOScaleY(1f, wtmTime)).OnComplete(() =>
+        {
+            _isAttacking = false;
+            _isReturning = false;
+        });   
     }
 
     private void Update()
@@ -48,6 +55,28 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
+    public void HandleMagnetHit(Collider2D collision)
+    {
+   
+        
+        
+        if (!_isAttacking || _isReturning) return;
+
+        if (!collision.CompareTag("CoilTopDown"))
+            return;
+        
+        _isReturning = true;
+        _sequence?.Kill(false);
+        _sequence = DOTween.Sequence().SetLink(gameObject);
+        
+        _sequence.Append(transform.DOScaleY(1f, wtmTime));
+
+        _sequence.OnComplete(() =>
+        {
+            _isAttacking = false;
+            _isReturning = false;
+        });
+    }
 
     public void HandleLook(Vector2 lookPos)
     {

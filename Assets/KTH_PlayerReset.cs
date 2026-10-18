@@ -7,6 +7,7 @@ public class KTH_PlayerReset : MonoBehaviour
 {
     [SerializeField]private SceneAsset resetScene;
     [SerializeField]private int maxHealth;
+
     private KTH_HealthSystem  healthSystem;
     private Vector3 origin;
 
