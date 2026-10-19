@@ -11,6 +11,7 @@ namespace _01.Scripts.Core
             Debug.Log(message);
         }
         #endif
+        
 
         #if UNITY_EDITOR
         public static void LogWarning(object message)
