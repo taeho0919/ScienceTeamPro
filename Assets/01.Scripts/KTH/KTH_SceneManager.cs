@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -23,23 +24,44 @@ public class KTH_SceneManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private bool isLoading;
+
     public void NextSceneGo()
     {
-        StartCoroutine(NextScene());
+        if (isLoading) return;
+
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == ss.scene[i].name)
+        {
+            i++;
+        }
+        string sceneName = ss.scene[i].name;
+        i++;
+
+        StartCoroutine(LoadWithFade(sceneName));
     }
-    
-    private IEnumerator NextScene()
+
+    public void LoadSceneWithFade(string sceneName)
     {
-        yield return new WaitForSeconds(1f);
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name !=ss.scene[i].name)
+        if (isLoading) return;
+        StartCoroutine(LoadWithFade(sceneName));
+    }
+
+    private IEnumerator LoadWithFade(string sceneName)
+    {
+        isLoading = true;
+
+        if (FadeManager.Instance != null)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(ss.scene[i].name);
-            i++;
+            yield return FadeManager.Instance.FadeIn().WaitForCompletion();
         }
-        else
+
+        yield return UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
+
+        if (FadeManager.Instance != null)
         {
-            i++;
-            UnityEngine.SceneManagement.SceneManager.LoadScene(ss.scene[i].name);
+            FadeManager.Instance.FadeOut();
         }
+
+        isLoading = false;
     }
 }

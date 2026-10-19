@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float fallGravityIncrease, maxGravityScale;
 
     private bool isgrounded;
-    private Vector2 dir;
+    public Vector2 dir;
     private float defaultGravityScale;
 
     private Animator animator;

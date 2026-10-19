@@ -11,6 +11,8 @@ public class KTH_BossDead : MonoBehaviour
     private KTH_BossBase bossBase;
     
     public readonly int DeadHash=Animator.StringToHash("IsDead");
+    private const string DeathStateName = "Death";
+    private bool isDead;
 
     private void Awake()
     {
@@ -33,11 +35,34 @@ public class KTH_BossDead : MonoBehaviour
 
     private void BossDead()
     {
+        if (isDead) return;
+        isDead = true;
         Debug.Log("Boss Dead");
-        
+
         bossBase.StopPatterns();
         splineanim.Pause();
         animator.SetTrigger(DeadHash);
+        StartCoroutine(WaitDeathAnimation());
+    }
+
+    private IEnumerator WaitDeathAnimation()
+    {
+        float timeout = 5f;
+
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName(DeathStateName) && timeout > 0f)
+        {
+            timeout -= Time.deltaTime;
+            yield return null;
+        }
+
+        while (animator.GetCurrentAnimatorStateInfo(0).IsName(DeathStateName)
+               && animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f
+               && timeout > 0f)
+        {
+            timeout -= Time.deltaTime;
+            yield return null;
+        }
+
         KTH_SceneManager.Instance.NextSceneGo();
     }
     
