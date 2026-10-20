@@ -1,11 +1,18 @@
-
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
 
-    [SerializeField] private AudioClip startBGM;
+    [System.Serializable]
+    public class SceneBGM
+    {
+        public string sceneName;
+        public AudioClip bgm;
+    }
+
+    [SerializeField] private SceneBGM[] sceneBGMs;
 
     [Range(0f, 1f)]
     [SerializeField] private float masterVolume = 1f;
@@ -30,18 +37,8 @@ public class SoundManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
 
-        AudioSource[] sources = GetComponents<AudioSource>();
-
-        if (sources.Length >= 2)
-        {
-            bgmSource = sources[0];
-            sfxSource = sources[1];
-        }
-        else
-        {
-            bgmSource = gameObject.AddComponent<AudioSource>();
-            sfxSource = gameObject.AddComponent<AudioSource>();
-        }
+        bgmSource = gameObject.AddComponent<AudioSource>();
+        sfxSource = gameObject.AddComponent<AudioSource>();
 
         bgmSource.playOnAwake = false;
         bgmSource.loop = true;
@@ -51,15 +48,48 @@ public class SoundManager : MonoBehaviour
 
         UpdateVolume();
     }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void Start()
     {
-        PlayBGM(startBGM);
+        PlayBGMForScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        PlayBGMForScene(scene.name);
+    }
+
+    private void PlayBGMForScene(string sceneName)
+    {
+        foreach (SceneBGM sceneBGM in sceneBGMs)
+        {
+            if (sceneBGM.sceneName == sceneName)
+            {
+                PlayBGM(sceneBGM.bgm);
+                return;
+            }
+        }
+
+        StopBGM();
     }
 
     private void UpdateVolume()
     {
-        bgmSource.volume = masterVolume * bgmVolume;
-        sfxSource.volume = masterVolume * sfxVolume;
+        if (bgmSource != null)
+            bgmSource.volume = masterVolume * bgmVolume;
+
+        if (sfxSource != null)
+            sfxSource.volume = masterVolume * sfxVolume;
     }
 
     public void SetMasterVolume(float value)
@@ -82,7 +112,8 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBGM(AudioClip clip)
     {
-        if (clip == null) return;
+        if (clip == null)
+            return;
 
         if (bgmSource.clip == clip && bgmSource.isPlaying)
             return;
@@ -93,13 +124,13 @@ public class SoundManager : MonoBehaviour
 
     public void StopBGM()
     {
-        bgmSource.Stop();
+        if (bgmSource != null)
+            bgmSource.Stop();
     }
 
     public void PlaySFX(AudioClip clip)
     {
-        if (clip == null) return;
-
-        sfxSource.PlayOneShot(clip);
+        if (clip != null)
+            sfxSource.PlayOneShot(clip);
     }
 }
