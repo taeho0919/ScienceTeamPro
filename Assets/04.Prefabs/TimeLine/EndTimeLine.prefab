@@ -175,6 +175,8 @@ PlayableDirector:
     value: {fileID: 4001809013443343989}
   - key: {fileID: -5048595208866700892, guid: 4cee7bbf37cf98e4d9c58e75fbea2abd, type: 2}
     value: {fileID: 4001809013443343989}
+  - key: {fileID: 1135901871854813570, guid: 4cee7bbf37cf98e4d9c58e75fbea2abd, type: 2}
+    value: {fileID: 8965803276555319202}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1940704792370522260
@@ -317,6 +319,7 @@ GameObject:
   - component: {fileID: 1124326832663178528}
   - component: {fileID: 8965803276555319202}
   - component: {fileID: 2094234044797298027}
+  - component: {fileID: 5972937552270214370}
   m_Layer: 0
   m_Name: Signal
   m_TagString: Untagged
@@ -385,6 +388,19 @@ MonoBehaviour:
   backGrond:
   - {fileID: -5992585001119792222, guid: 027acceabb193174380e0bceda322f74, type: 3}
   - {fileID: 5121449476489614632, guid: 5f25c13fe4171b14e9dfc1db0071d14f, type: 3}
+--- !u!114 &5972937552270214370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979599881845797879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb005784b56c7d4b92247d3179e154b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: EndingScene
 --- !u!1 &5353680048339134397
 GameObject:
   m_ObjectHideFlags: 0
