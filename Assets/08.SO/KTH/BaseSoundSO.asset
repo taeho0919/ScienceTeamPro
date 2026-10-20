@@ -16,7 +16,7 @@ MonoBehaviour:
   baseAttack2: {fileID: 8300000, guid: be650ed6dd714ff0828dadaaec558625, type: 3}
   baseAttack3: {fileID: 8300000, guid: 0ead15fff95148b385127ad91f837f0c, type: 3}
   boss1Pattern1: {fileID: 8300000, guid: 08ff495ba7864ce5a485c0bf524554ad, type: 3}
-  boss1Pattern2: {fileID: 0}
+  boss1Pattern2: {fileID: 8300000, guid: a6f894030b40a20419207c884ea2b8eb, type: 3}
   boss2Pattern1: {fileID: 8300000, guid: 0f19534f471946b985f4045a0c5f1c12, type: 3}
   boss2Pattern2: {fileID: 8300000, guid: 05bb6d5449c54fa494ed9466556b2309, type: 3}
   boss2Pattern3: {fileID: 8300000, guid: 68882321a5dc4516910d1c8db6fe45c4, type: 3}
