@@ -5,10 +5,18 @@ public class KTH_BaseAttack2 : MonoBehaviour
 {
     [SerializeField] private GameObject attack2;
     [SerializeField] private float spawnInterval = 0.3f;
+    [SerializeField] private KTH_BaseSoundSO soundSO;
 
     private void OnEnable()
     {
+        PlaySound();
         StartCoroutine(SpawnRoutine());
+    }
+
+    private void PlaySound()
+    {
+        if (soundSO == null) return;
+        soundSO.Play(soundSO.baseAttack2);
     }
 
     private IEnumerator SpawnRoutine()

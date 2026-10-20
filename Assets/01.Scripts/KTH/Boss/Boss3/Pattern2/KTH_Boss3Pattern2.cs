@@ -5,6 +5,7 @@ using UnityEngine.Splines;
 public class KTH_Boss3Pattern2 : MonoBehaviour
 {
     [SerializeField] private float windSpeed = 6f;
+    [SerializeField] private KTH_BaseSoundSO soundSO;
     private Vector3 windDirection=Vector3.left;
     private Rigidbody2D playerRb;
     
@@ -28,6 +29,13 @@ public class KTH_Boss3Pattern2 : MonoBehaviour
         animator.SetBool(AttackEndHash,false);
         animator.SetTrigger(IsAttack2Hash);
         ps.Play();
+        PlaySound();
+    }
+
+    private void PlaySound()
+    {
+        if (soundSO == null) return;
+        soundSO.Play(soundSO.boss3Pattern2);
     }
 
     private void OnDisable()

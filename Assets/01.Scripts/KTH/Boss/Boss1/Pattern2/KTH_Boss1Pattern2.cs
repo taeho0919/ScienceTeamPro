@@ -7,6 +7,7 @@ public class KTH_Boss1Pattern2 : MonoBehaviour
     [SerializeField] private float swingAngle = 60f;
     [SerializeField] private float swingTime = 0.4f;
     [SerializeField] private float resetTime = 0.2f;
+    [SerializeField] private KTH_BaseSoundSO soundSO;
     private Rigidbody2D rb;
     private Animator anim;
     private SplineAnimate splineAnimate;
@@ -26,7 +27,14 @@ public class KTH_Boss1Pattern2 : MonoBehaviour
 
     private void OnEnable()
     {
+        PlaySound();
         TurnOff();
+    }
+
+    private void PlaySound()
+    {
+        if (soundSO == null) return;
+        soundSO.Play(soundSO.boss1Pattern2);
     }
 
     private void OnDisable()

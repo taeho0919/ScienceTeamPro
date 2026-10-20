@@ -7,6 +7,7 @@ public class KTH_LightBallSpawn : MonoBehaviour
 {
     [SerializeField]private GameObject[] lightBall;
     [SerializeField] private float spawnInterval = 1f;
+    [SerializeField] private KTH_BaseSoundSO soundSO;
     private SplineAnimate splineAnim;
     public Action StartMove;
 
@@ -19,7 +20,14 @@ public class KTH_LightBallSpawn : MonoBehaviour
     private void OnEnable()
     {
         splineAnim.Pause();
+        PlaySound();
         StartCoroutine(Spawn());
+    }
+
+    private void PlaySound()
+    {
+        if (soundSO == null) return;
+        soundSO.Play(soundSO.boss1Pattern1);
     }
 
     private void OnDisable()

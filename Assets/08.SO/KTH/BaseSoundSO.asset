@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81befe87b463ab8449213990e1b9027b, type: 3}
+  m_Name: BaseSoundSO
+  m_EditorClassIdentifier: 
+  baseAttack1: {fileID: 0}
+  baseAttack2: {fileID: 0}
+  baseAttack3: {fileID: 0}
+  boss1Pattern1: {fileID: 0}
+  boss1Pattern2: {fileID: 0}
+  boss2Pattern2: {fileID: 0}
+  boss2Pattern3: {fileID: 0}
+  boss3Pattern1: {fileID: 0}
+  boss3Pattern2: {fileID: 0}
+  boss3Pattern3: {fileID: 0}

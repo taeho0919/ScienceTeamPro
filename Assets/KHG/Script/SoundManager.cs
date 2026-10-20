@@ -1,12 +1,11 @@
 
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
 
-    [SerializeField] private AudioClip[] audioClips;
+    [SerializeField] private AudioClip startBGM;
 
     [Range(0f, 1f)]
     [SerializeField] private float masterVolume = 1f;
@@ -16,8 +15,6 @@ public class SoundManager : MonoBehaviour
 
     [Range(0f, 1f)]
     [SerializeField] private float sfxVolume = 1f;
-
-    private Dictionary<string, AudioClip> soundDict;
 
     private AudioSource bgmSource;
     private AudioSource sfxSource;
@@ -52,21 +49,11 @@ public class SoundManager : MonoBehaviour
         sfxSource.playOnAwake = false;
         sfxSource.loop = false;
 
-        soundDict = new Dictionary<string, AudioClip>();
-
-        foreach (AudioClip clip in audioClips)
-        {
-            if (clip != null)
-            {
-                soundDict[clip.name] = clip;
-            }
-        }
-
         UpdateVolume();
     }
     private void Start()
     {
-        PlayBGM(audioClips[0].name);
+        PlayBGM(startBGM);
     }
 
     private void UpdateVolume()
@@ -93,13 +80,9 @@ public class SoundManager : MonoBehaviour
         UpdateVolume();
     }
 
-    public void PlayBGM(string soundName)
+    public void PlayBGM(AudioClip clip)
     {
-        if (!soundDict.TryGetValue(soundName, out AudioClip clip))
-        {
-            Debug.LogWarning("배경음악을 찾을 수 없습니다: " + soundName);
-            return;
-        }
+        if (clip == null) return;
 
         if (bgmSource.clip == clip && bgmSource.isPlaying)
             return;
@@ -113,14 +96,10 @@ public class SoundManager : MonoBehaviour
         bgmSource.Stop();
     }
 
-    public void PlaySFX(string soundName)
+    public void PlaySFX(AudioClip clip)
     {
-        if (!soundDict.TryGetValue(soundName, out AudioClip clip))
-        {
-            Debug.LogWarning("효과음을 찾을 수 없습니다: " + soundName);
-            return;
-        }
+        if (clip == null) return;
 
-        sfxSource.PlayOneShot(clip, masterVolume * sfxVolume);
+        sfxSource.PlayOneShot(clip);
     }
 }

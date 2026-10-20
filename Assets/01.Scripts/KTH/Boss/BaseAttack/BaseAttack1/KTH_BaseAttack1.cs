@@ -7,6 +7,7 @@ public class KTH_BaseAttack1 : MonoBehaviour
     [SerializeField] private int damage = 1;
     [SerializeField] private LayerMask hitLayer = ~0;
     [SerializeField]private Transform playerTransform;
+    [SerializeField] private KTH_BaseSoundSO soundSO;
     private Animator animator;
     private SpriteRenderer sr;
     private bool isAttack = false;
@@ -22,6 +23,7 @@ public class KTH_BaseAttack1 : MonoBehaviour
     private void OnEnable()
     {
         FindPlayer();
+        PlaySound();
         StartCoroutine(BaseAttack());
     }
 
@@ -59,6 +61,12 @@ public class KTH_BaseAttack1 : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(renderer.bounds.center, renderer.bounds.size);
+    }
+
+    private void PlaySound()
+    {
+        if (soundSO == null) return;
+        soundSO.Play(soundSO.baseAttack1);
     }
 
     private void FindPlayer()

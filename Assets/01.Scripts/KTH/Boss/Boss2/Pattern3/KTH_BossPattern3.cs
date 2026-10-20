@@ -5,6 +5,7 @@ public class KTH_BossPattern3 : MonoBehaviour
 {
     [SerializeField] private GameObject offCoil;
     [SerializeField]private GameObject onCoil;
+    [SerializeField] private KTH_BaseSoundSO soundSO;
 
     public readonly int attackHash = Animator.StringToHash("IsAttack");
     
@@ -19,7 +20,14 @@ public class KTH_BossPattern3 : MonoBehaviour
 
     private void OnEnable()
     {
+        PlaySound();
         ChangeCoilTransform();
+    }
+
+    private void PlaySound()
+    {
+        if (soundSO == null) return;
+        soundSO.Play(soundSO.boss2Pattern3);
     }
 
     private void ChangeCoilTransform()

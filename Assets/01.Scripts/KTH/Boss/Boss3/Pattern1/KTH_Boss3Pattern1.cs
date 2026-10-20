@@ -8,6 +8,7 @@ public class KTH_Boss3Pattern1 : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField]private Transform target;
     [SerializeField]private Animator animator;
+    [SerializeField] private KTH_BaseSoundSO soundSO;
     private SplineAnimate splineanim;
 
     public readonly int IsAttack1Hash = Animator.StringToHash("IsAttack1");
@@ -22,9 +23,14 @@ public class KTH_Boss3Pattern1 : MonoBehaviour
 
     private void OnEnable()
     {
-
+        PlaySound();
         FanFire();
+    }
 
+    private void PlaySound()
+    {
+        if (soundSO == null) return;
+        soundSO.Play(soundSO.boss3Pattern1);
     }
 
     private void OnDisable()

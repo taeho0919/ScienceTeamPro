@@ -8,6 +8,7 @@ public class Boss3PatternTarget : MonoBehaviour
     public  GameObject[] coils;
     [SerializeField]private float spawnInterval;
     [SerializeField] private float checkDelay = 3f;
+    [SerializeField] private KTH_BaseSoundSO soundSO;
     private KTH_CheckCoil checkCoil;
 
     private void Awake()
@@ -18,7 +19,14 @@ public class Boss3PatternTarget : MonoBehaviour
 
     private void OnEnable()
     {
+        PlaySound();
         StartCoroutine(Find());
+    }
+
+    private void PlaySound()
+    {
+        if (soundSO == null) return;
+        soundSO.Play(soundSO.boss3Pattern3);
     }
 
     void Update()

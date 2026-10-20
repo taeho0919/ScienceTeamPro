@@ -9,9 +9,11 @@ public class KTH_BaseAttack3 : MonoBehaviour
     [SerializeField] private float maxX = 8f;
     [SerializeField] private float minY = -5f;
     [SerializeField] private float maxY = 5f;
+    [SerializeField] private KTH_BaseSoundSO soundSO;
 
     private void OnEnable()
     {
+        PlaySound();
         int count = Random.Range(minCount, maxCount + 1);
         for (int i = 0; i < count; i++)
         {
@@ -19,6 +21,12 @@ public class KTH_BaseAttack3 : MonoBehaviour
             KTH_Base3 bolt = Instantiate(lightning, pos, Quaternion.identity);
             bolt.FitHeight(minY, maxY);
         }
+    }
+
+    private void PlaySound()
+    {
+        if (soundSO == null) return;
+        soundSO.Play(soundSO.baseAttack3);
     }
 
     private void OnDrawGizmosSelected()

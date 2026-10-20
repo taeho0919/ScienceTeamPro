@@ -8,6 +8,7 @@ public class KTH_Boss2Pattern2 : MonoBehaviour
     [SerializeField] private Vector2 boxOffset = new Vector2(-37.7f, 3.64f);
     [SerializeField] private Vector2 boxSize = new Vector2(68.83f, 13.97f);
     [SerializeField] private float growTime = 1f;
+    [SerializeField] private KTH_BaseSoundSO soundSO;
 
     private ParticleSystem ps;
     private SplineAnimate splineAnimate;
@@ -27,7 +28,14 @@ public class KTH_Boss2Pattern2 : MonoBehaviour
 
     private void OnEnable()
     {
+        PlaySound();
         Fire();
+    }
+
+    private void PlaySound()
+    {
+        if (soundSO == null) return;
+        soundSO.Play(soundSO.boss2Pattern2);
     }
 
     private void OnDisable()
