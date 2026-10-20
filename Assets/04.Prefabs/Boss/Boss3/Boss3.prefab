@@ -10257,6 +10257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b865a9d3b6e87b4a8499996eb6513b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   windSpeed: 20
 --- !u!61 &6936335413037109973
 BoxCollider2D:
@@ -11225,6 +11226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baea9f67da5599245b22c160c9d51e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   attack2: {fileID: 2150397862408723908, guid: 3f89b39892cd9844fa60c727f99f6497, type: 3}
   spawnInterval: 0.3
 --- !u!1 &2683179927541568378
@@ -11448,6 +11450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355ef261d5e2bfd4aad5c8715af5c837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   player: {fileID: 0}
   coils:
   - {fileID: 1004675897393000562}
@@ -16733,6 +16736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01012152e1599e468cb5e1fd87d57ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   delay: 2
   damage: 1
   hitLayer:
@@ -26657,6 +26661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407e3faa9f423f145b35d293974197aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   target: {fileID: 2782700867843895328}
   animator: {fileID: 5570920541649998991}
 --- !u!58 &1458217118466788493
@@ -37190,6 +37195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ed22898ec4caa4fbfe3e8a2d29fd5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   lightning: {fileID: 1514905015091417504, guid: 69aad37be49a0e34ba9365106f86da63, type: 3}
   minCount: 3
   maxCount: 5

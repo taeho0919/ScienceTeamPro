@@ -2810,7 +2810,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f74f6d132d9ce64eb94608b0ad3777b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBGMs: []
+  sceneBGMs:
+  - sceneName: Boss1Scene
+    bgm: {fileID: 8300000, guid: 27bce745ef74e7244a40369f4f7f1858, type: 3}
+  - sceneName: Boss2Scene
+    bgm: {fileID: 8300000, guid: b7ef302f54cace145999eb42a1a3e2fa, type: 3}
   masterVolume: 1
   bgmVolume: 1
   sfxVolume: 1

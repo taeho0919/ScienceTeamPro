@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81befe87b463ab8449213990e1b9027b, type: 3}
   m_Name: BaseSoundSO
   m_EditorClassIdentifier: 
-  baseAttack1: {fileID: 0}
-  baseAttack2: {fileID: 0}
-  baseAttack3: {fileID: 0}
+  baseAttack1: {fileID: 8300000, guid: 27bce745ef74e7244a40369f4f7f1858, type: 3}
+  baseAttack2: {fileID: 8300000, guid: 27bce745ef74e7244a40369f4f7f1858, type: 3}
+  baseAttack3: {fileID: 8300000, guid: 27bce745ef74e7244a40369f4f7f1858, type: 3}
   boss1Pattern1: {fileID: 0}
   boss1Pattern2: {fileID: 0}
   boss2Pattern2: {fileID: 0}

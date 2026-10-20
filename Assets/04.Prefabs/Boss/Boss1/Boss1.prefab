@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836acc39559de994a8f6b41c251f6e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   lightBall:
   - {fileID: 3859792909384184158}
   - {fileID: 5918987482567479627}
@@ -357,6 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4be279272611c84698b533647e9e248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   swingAngle: 60
   swingTime: 0.4
   resetTime: 0.2
@@ -1812,6 +1814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ed22898ec4caa4fbfe3e8a2d29fd5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   lightning: {fileID: 1514905015091417504, guid: 69aad37be49a0e34ba9365106f86da63, type: 3}
   minCount: 3
   maxCount: 5
@@ -2383,6 +2386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baea9f67da5599245b22c160c9d51e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   attack2: {fileID: 2150397862408723908, guid: 3f89b39892cd9844fa60c727f99f6497, type: 3}
   spawnInterval: 0.3
 --- !u!1 &7747770506855124335
@@ -7735,6 +7739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01012152e1599e468cb5e1fd87d57ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   delay: 1
   damage: 1
   hitLayer:
