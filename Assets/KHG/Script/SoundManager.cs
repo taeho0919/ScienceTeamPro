@@ -1,3 +1,5 @@
+
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,15 +7,24 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
 
-    [System.Serializable]
+    [Serializable]
     public class SceneBGM
     {
         public string sceneName;
         public AudioClip bgm;
     }
 
+    [Serializable]
+    public class SFXSound
+    {
+        public string soundName;
+        public AudioClip clip;
+    }
+
+    [Header("씬별 BGM")]
     [SerializeField] private SceneBGM[] sceneBGMs;
 
+    [Header("볼륨 설정")]
     [Range(0f, 1f)]
     [SerializeField] private float masterVolume = 1f;
 
@@ -26,6 +37,8 @@ public class SoundManager : MonoBehaviour
     private AudioSource bgmSource;
     private AudioSource sfxSource;
 
+    private float volume=1f;
+    
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -45,6 +58,11 @@ public class SoundManager : MonoBehaviour
 
         sfxSource.playOnAwake = false;
         sfxSource.loop = false;
+        
+        bgmVolume = PlayerPrefs.GetFloat("BGMVolume", volume);
+        sfxVolume = PlayerPrefs.GetFloat("SFXVolume", volume);
+        masterVolume = PlayerPrefs.GetFloat("MasterVolume", volume);
+        
 
         UpdateVolume();
     }
@@ -56,6 +74,7 @@ public class SoundManager : MonoBehaviour
 
     private void OnDisable()
     {
+        volume = bgmSource.volume;
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
@@ -71,15 +90,15 @@ public class SoundManager : MonoBehaviour
 
     private void PlayBGMForScene(string sceneName)
     {
-        foreach (SceneBGM sceneBGM in sceneBGMs)
+        foreach (SceneBGM item in sceneBGMs)
         {
-            if (sceneBGM.sceneName == sceneName)
+            if (item.sceneName == sceneName)
             {
-                PlayBGM(sceneBGM.bgm);
+                PlayBGM(item.bgm);
                 return;
             }
         }
-
+        
         StopBGM();
     }
 
@@ -95,18 +114,21 @@ public class SoundManager : MonoBehaviour
     public void SetMasterVolume(float value)
     {
         masterVolume = Mathf.Clamp01(value);
+        PlayerPrefs.SetFloat("MasterVolume", masterVolume);
         UpdateVolume();
     }
 
     public void SetBGMVolume(float value)
     {
         bgmVolume = Mathf.Clamp01(value);
+        PlayerPrefs.SetFloat("BGMVolume", bgmVolume);
         UpdateVolume();
     }
 
     public void SetSFXVolume(float value)
     {
         sfxVolume = Mathf.Clamp01(value);
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
         UpdateVolume();
     }
 
@@ -132,5 +154,9 @@ public class SoundManager : MonoBehaviour
     {
         if (clip != null)
             sfxSource.PlayOneShot(clip);
+    }
+    public void SaveVolume()
+    {
+        PlayerPrefs.Save();
     }
 }
