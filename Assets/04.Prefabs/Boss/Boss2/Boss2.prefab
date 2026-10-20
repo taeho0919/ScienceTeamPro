@@ -11517,6 +11517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b371e2b4483131a4babb20e470447c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSO: {fileID: 11400000, guid: b8e4410398e91184fbb9f40f134d19a8, type: 2}
   bakery:
   - {fileID: 7975729015634216386}
   - {fileID: 4515324635977020278}

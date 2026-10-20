@@ -65,6 +65,7 @@ public class KTH_Boss3Pattern1 : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             KTH_CameraShakeManager.Instance.Shake(0.5f);
+            if (soundSO != null) soundSO.Play(soundSO.boss3Pattern1Wall);
         }
     }
 }

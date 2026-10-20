@@ -2473,6 +2473,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1866504474155709101, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2223622150407301766, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2504,6 +2508,10 @@ PrefabInstance:
     - target: {fileID: 2907344682321268913, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101887708312488465, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3158054740188345860, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: coilChecks.Array.size
@@ -2529,6 +2537,26 @@ PrefabInstance:
       propertyPath: 'coilChecks.Array.data[4]'
       value: 
       objectReference: {fileID: 637617983}
+    - target: {fileID: 3662871164365338906, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662871164365338906, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662871164365338906, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.0063117654
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662871164365338906, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.9999801
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662871164365338906, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180.723
+      objectReference: {fileID: 0}
     - target: {fileID: 4025518197497516124, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: health
       value: 40
@@ -2548,6 +2576,10 @@ PrefabInstance:
     - target: {fileID: 4214821663211496675, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390580918495782088, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4653556200766940091, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2628,6 +2660,10 @@ PrefabInstance:
     - target: {fileID: 5589184341417451999, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1.0000013
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563013944808182751, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7503914526377742815, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_Name
@@ -2814,6 +2850,8 @@ MonoBehaviour:
   - sceneName: Boss1Scene
     bgm: {fileID: 8300000, guid: 27bce745ef74e7244a40369f4f7f1858, type: 3}
   - sceneName: Boss2Scene
+    bgm: {fileID: 8300000, guid: 1202cc570a3741a4eb4364c767ad50c8, type: 3}
+  - sceneName: Boss3Scene
     bgm: {fileID: 8300000, guid: b7ef302f54cace145999eb42a1a3e2fa, type: 3}
   masterVolume: 1
   bgmVolume: 1
