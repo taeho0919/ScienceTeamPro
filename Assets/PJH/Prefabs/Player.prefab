@@ -321,11 +321,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigid: {fileID: 1434507983496393814}
   groundChecker: {fileID: 6722461256026413782}
-  moveSpeed: 20
-  jumpPower: 30
+  moveSpeed: 25
+  jumpPower: 27
   lowJumpMultiplier: 1
-  fallGravityIncrease: 4
-  maxGravityScale: 3
+  fallGravityIncrease: 14
+  maxGravityScale: 30
+  dir: {x: 0, y: 0}
 --- !u!114 &8777917313666780420
 MonoBehaviour:
   m_ObjectHideFlags: 0
