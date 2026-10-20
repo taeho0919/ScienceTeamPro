@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -14,8 +12,8 @@ public class MainMenu : MonoBehaviour
     private void Start()
     { 
         if (settingsPanel != null)
-        {
-        settingsPanel.SetActive(false);
+        {  
+            settingsPanel.SetActive(false);
         }
     }
 
