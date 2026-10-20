@@ -13,11 +13,13 @@ public class KTH_BaseSoundSO : ScriptableObject
     public AudioClip boss1Pattern2;
 
     [Header("보스2")]
+    public AudioClip boss2Pattern1;
     public AudioClip boss2Pattern2;
     public AudioClip boss2Pattern3;
 
     [Header("보스3")]
     public AudioClip boss3Pattern1;
+    public AudioClip boss3Pattern1Wall;
     public AudioClip boss3Pattern2;
     public AudioClip boss3Pattern3;
 

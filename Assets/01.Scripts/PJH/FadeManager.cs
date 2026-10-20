@@ -2,14 +2,45 @@ using System;
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 public class FadeManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup fadePanel;
-    
+
     [Header("시간")]
     [SerializeField] private float fadeDuration;
 
     public static FadeManager Instance;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void CreateIfMissing()
+    {
+        if (Instance != null) return;
+
+        GameObject root = new GameObject("FadeManager");
+        root.SetActive(false);
+
+        Canvas canvas = root.AddComponent<Canvas>();
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        canvas.sortingOrder = 1000;
+
+        GameObject panel = new GameObject("FadePanel", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image), typeof(CanvasGroup));
+        panel.transform.SetParent(root.transform, false);
+        RectTransform rt = panel.GetComponent<RectTransform>();
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.one;
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
+        panel.GetComponent<Image>().color = Color.black;
+
+        CanvasGroup group = panel.GetComponent<CanvasGroup>();
+        group.blocksRaycasts = false;
+
+        FadeManager manager = root.AddComponent<FadeManager>();
+        manager.fadePanel = group;
+        manager.fadeDuration = 1f;
+        root.SetActive(true);
+    }
 
     private void Awake()
     {

@@ -4251,6 +4251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss1
       objectReference: {fileID: 0}
+    - target: {fileID: 1653271105177855875, guid: 1d6f36109c6d4a642a1ce0a139b5c7c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3392136293732799138, guid: 1d6f36109c6d4a642a1ce0a139b5c7c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.0296395
@@ -4315,6 +4319,10 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 6367042182436589032}
+    - target: {fileID: 6293575344796426424, guid: 1d6f36109c6d4a642a1ce0a139b5c7c6, type: 3}
+      propertyPath: duration
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8127705662564923700, guid: 1d6f36109c6d4a642a1ce0a139b5c7c6, type: 3}
       propertyPath: m_TagString
       value: CoilTopDown
@@ -4433,9 +4441,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2520276475478888964, guid: f094f284efc50ad429833152f7c5f68d, type: 3}
+      propertyPath: duration
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2627479729711006683, guid: f094f284efc50ad429833152f7c5f68d, type: 3}
       propertyPath: m_TagString
       value: CoilTopDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809851461177246205, guid: f094f284efc50ad429833152f7c5f68d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809851461177246205, guid: f094f284efc50ad429833152f7c5f68d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809851461177246205, guid: f094f284efc50ad429833152f7c5f68d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.0063117654
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809851461177246205, guid: f094f284efc50ad429833152f7c5f68d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.9999801
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809851461177246205, guid: f094f284efc50ad429833152f7c5f68d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180.723
       objectReference: {fileID: 0}
     - target: {fileID: 2937968718738480175, guid: f094f284efc50ad429833152f7c5f68d, type: 3}
       propertyPath: m_Name
@@ -4487,7 +4519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6465899563357935928, guid: f094f284efc50ad429833152f7c5f68d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1.000002
+      value: 1.0000013
       objectReference: {fileID: 0}
     - target: {fileID: 6528335788199592507, guid: f094f284efc50ad429833152f7c5f68d, type: 3}
       propertyPath: m_TagString
@@ -4614,6 +4646,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CoilTopDown
       objectReference: {fileID: 0}
+    - target: {fileID: 3076362378545612805, guid: 6bfd1b8b80f2c0044ae4c21b1c044558, type: 3}
+      propertyPath: duration
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3611006712970962952, guid: 6bfd1b8b80f2c0044ae4c21b1c044558, type: 3}
       propertyPath: m_TagString
       value: CoilTopDown
@@ -4621,6 +4657,14 @@ PrefabInstance:
     - target: {fileID: 4227243483133704969, guid: 6bfd1b8b80f2c0044ae4c21b1c044558, type: 3}
       propertyPath: m_TagString
       value: CoilTopDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473736821062776302, guid: 6bfd1b8b80f2c0044ae4c21b1c044558, type: 3}
+      propertyPath: checkDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473736821062776302, guid: 6bfd1b8b80f2c0044ae4c21b1c044558, type: 3}
+      propertyPath: spawnInterval
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6869099826407426924, guid: 6bfd1b8b80f2c0044ae4c21b1c044558, type: 3}
       propertyPath: hpBar
@@ -4649,6 +4693,10 @@ PrefabInstance:
     - target: {fileID: 8384784667994526831, guid: 6bfd1b8b80f2c0044ae4c21b1c044558, type: 3}
       propertyPath: m_Name
       value: Boss3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384784667994526831, guid: 6bfd1b8b80f2c0044ae4c21b1c044558, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8593719129784776801, guid: 6bfd1b8b80f2c0044ae4c21b1c044558, type: 3}
       propertyPath: m_LocalPosition.x

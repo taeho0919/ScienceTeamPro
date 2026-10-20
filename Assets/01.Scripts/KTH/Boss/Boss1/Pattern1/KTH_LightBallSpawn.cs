@@ -20,7 +20,6 @@ public class KTH_LightBallSpawn : MonoBehaviour
     private void OnEnable()
     {
         splineAnim.Pause();
-        PlaySound();
         StartCoroutine(Spawn());
     }
 
@@ -46,7 +45,8 @@ public class KTH_LightBallSpawn : MonoBehaviour
             lightBall[i].SetActive(true);
             yield return new WaitForSeconds(spawnInterval);
         }
-        
+
+        PlaySound();
         StartMove?.Invoke();
     }
 }

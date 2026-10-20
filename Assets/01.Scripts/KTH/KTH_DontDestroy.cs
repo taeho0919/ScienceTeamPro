@@ -8,7 +8,6 @@ public class KTH_DontDestroy : MonoBehaviour
     [SerializeField]private SpriteRenderer backGround;
     [SerializeField] private GameObject[] boss;
     private Transform player;
-    private int i = 0;
     private static KTH_DontDestroy instance;
 
     private void Awake()
@@ -47,29 +46,30 @@ public class KTH_DontDestroy : MonoBehaviour
             return;
         }
 
-        if (i < backgrounds.Length)
+        ApplyStage(scene.name);
+    }
+
+    private void Start()
+    {
+        ApplyStage(SceneManager.GetActiveScene().name);
+    }
+
+    private void ApplyStage(string sceneName)
+    {
+        int stage = -1;
+        if (sceneName == "Boss1Scene") stage = 0;
+        else if (sceneName == "Boss2Scene") stage = 1;
+        else if (sceneName == "Boss3Scene") stage = 2;
+        if (stage < 0) return;
+
+        if (stage < backgrounds.Length)
         {
-            backGround.sprite = backgrounds[i];
-            i++;
+            backGround.sprite = backgrounds[stage];
         }
 
-        if (scene.name == "Boss1Scene")
+        for (int b = 0; b < boss.Length; b++)
         {
-            boss[0].SetActive(true);
-            boss[2].SetActive(false);
-            boss[1].SetActive(false);
-        }
-        if(scene.name == "Boss2Scene")
-        {
-            boss[1].SetActive(true);
-            boss[0].SetActive(false);
-            boss[2].SetActive(false);
-        }
-        if(scene.name == "Boss3Scene")
-        {
-            boss[2].SetActive(true);
-            boss[1].SetActive(false);
-            boss[0].SetActive(false);
+            boss[b].SetActive(b == stage);
         }
     }
 }
