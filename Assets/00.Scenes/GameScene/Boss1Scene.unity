@@ -429,6 +429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361157542}
   - component: {fileID: 361157543}
+  - component: {fileID: 868983453549191058}
   m_Layer: 5
   m_Name: BGM
   m_TagString: Untagged
@@ -532,6 +533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418092243}
   - component: {fileID: 418092244}
+  - component: {fileID: 887570464984765460}
   m_Layer: 5
   m_Name: Marster
   m_TagString: Untagged
@@ -731,6 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 0}
   s: {fileID: 0}
+  sceneName: 
 --- !u!4 &586124014
 Transform:
   m_ObjectHideFlags: 0
@@ -835,6 +838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 760069123}
   - component: {fileID: 760069124}
+  - component: {fileID: 467687114670042667}
   m_Layer: 5
   m_Name: SFX
   m_TagString: Untagged
@@ -1516,12 +1520,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2403,6 +2407,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095199852}
   m_CullTransparentMesh: 1
+--- !u!114 &467687114670042667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760069122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1e5a9b3d2f4e6a8b0c9d1e2f3a4b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+--- !u!114 &868983453549191058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361157541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1e5a9b3d2f4e6a8b0c9d1e2f3a4b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+--- !u!114 &887570464984765460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418092242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1e5a9b3d2f4e6a8b0c9d1e2f3a4b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1001 &3345627005367001325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2562,6 +2605,10 @@ PrefabInstance:
     - target: {fileID: 5572630558472958031, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824826280296206417, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7503914526377742815, guid: 82ef79d8114a431478213ddb8eca25e4, type: 3}
       propertyPath: m_Name
@@ -2751,6 +2798,16 @@ MonoBehaviour:
     bgm: {fileID: 8300000, guid: 1202cc570a3741a4eb4364c767ad50c8, type: 3}
   - sceneName: Boss3Scene
     bgm: {fileID: 8300000, guid: b7ef302f54cace145999eb42a1a3e2fa, type: 3}
+  - sceneName: Boss3Scene
+    bgm: {fileID: 8300000, guid: b7ef302f54cace145999eb42a1a3e2fa, type: 3}
+  - sceneName: DeathScene
+    bgm: {fileID: 8300000, guid: 49870ec5a4e1476c98e3b008268a9bb2, type: 3}
+  - sceneName: EndCutScene
+    bgm: {fileID: 8300000, guid: 96221bf38dc149d1a392e9fedae7fb10, type: 3}
+  - sceneName: EndingScene
+    bgm: {fileID: 8300000, guid: 2fa5205e4a2040478107c2aacd3f2049, type: 3}
+  - sceneName: MainUI
+    bgm: {fileID: 8300000, guid: e14b6380391535c4a8f1c7782f0404e0, type: 3}
   masterVolume: 1
   bgmVolume: 1
   sfxVolume: 1

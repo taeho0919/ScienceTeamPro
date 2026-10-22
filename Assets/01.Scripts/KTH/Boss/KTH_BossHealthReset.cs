@@ -1,10 +1,21 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KTH_BossHealthReset : MonoBehaviour
+public class KTH_BossHealthReset : MonoBehaviour, ISerializationCallbackReceiver
 {
-    [SerializeField]private SceneAsset resetScene;
+#if UNITY_EDITOR
+    [SerializeField]private UnityEditor.SceneAsset resetScene;
+#endif
+    [SerializeField, HideInInspector] private string resetSceneName;
+
+    public void OnBeforeSerialize()
+    {
+#if UNITY_EDITOR
+        resetSceneName = resetScene != null ? resetScene.name : string.Empty;
+#endif
+    }
+
+    public void OnAfterDeserialize() { }
     [SerializeField]private int maxHealth;
     private KTH_HealthSystem  healthSystem;
 
@@ -25,7 +36,7 @@ public class KTH_BossHealthReset : MonoBehaviour
 
     private void OnLoadScene(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == resetScene.name)
+        if (healthSystem != null && scene.name == resetSceneName)
         {
             healthSystem.Heal(maxHealth);
         }

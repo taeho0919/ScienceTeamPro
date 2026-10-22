@@ -1,12 +1,23 @@
 using System;
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KTH_PlayerDead : MonoBehaviour
+public class KTH_PlayerDead : MonoBehaviour, ISerializationCallbackReceiver
 {
-    [SerializeField] private SceneAsset scene;
+#if UNITY_EDITOR
+    [SerializeField] private UnityEditor.SceneAsset scene;
+#endif
+    [SerializeField, HideInInspector] private string sceneName;
+
+    public void OnBeforeSerialize()
+    {
+#if UNITY_EDITOR
+        sceneName = scene != null ? scene.name : string.Empty;
+#endif
+    }
+
+    public void OnAfterDeserialize() { }
     private KTH_HealthSystem hs;
     
     private void Awake()
@@ -33,6 +44,6 @@ public class KTH_PlayerDead : MonoBehaviour
     private void OnDeath()
     {
         Debug.Log("Player Dead");
-        KTH_SceneManager.Instance.LoadSceneWithFade(scene.name);
+        KTH_SceneManager.Instance.LoadSceneWithFade(sceneName);
     }
 }

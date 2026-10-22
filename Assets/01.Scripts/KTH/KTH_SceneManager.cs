@@ -30,13 +30,11 @@ public class KTH_SceneManager : MonoBehaviour
     {
         if (isLoading) return;
 
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == ss.scene[i].name)
-        {
-            i++;
-        }
-        string sceneName = ss.scene[i].name;
-        i++;
+        int current = System.Array.IndexOf(ss.sceneNames, UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        i = current >= 0 ? current + 1 : i;
+        if (i >= ss.sceneNames.Length) return;
 
+        string sceneName = ss.sceneNames[i];
         StartCoroutine(LoadWithFade(sceneName));
     }
 

@@ -877,12 +877,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPanel: {fileID: 1904028227}
-  scenenName: Boss1Scene
+  scenenName: StartCutScene
 --- !u!1 &792322523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,9 +1323,15 @@ MonoBehaviour:
   - sceneName: Boss1Scene
     bgm: {fileID: 8300000, guid: 27bce745ef74e7244a40369f4f7f1858, type: 3}
   - sceneName: Boss2Scene
-    bgm: {fileID: 8300000, guid: f59a2acd7facde140b59600fa69f83b6, type: 3}
+    bgm: {fileID: 8300000, guid: 1202cc570a3741a4eb4364c767ad50c8, type: 3}
   - sceneName: Boss3Scene
     bgm: {fileID: 8300000, guid: b7ef302f54cace145999eb42a1a3e2fa, type: 3}
+  - sceneName: DeathScene
+    bgm: {fileID: 8300000, guid: 49870ec5a4e1476c98e3b008268a9bb2, type: 3}
+  - sceneName: EndCutScene
+    bgm: {fileID: 8300000, guid: 96221bf38dc149d1a392e9fedae7fb10, type: 3}
+  - sceneName: EndingScene
+    bgm: {fileID: 8300000, guid: 2fa5205e4a2040478107c2aacd3f2049, type: 3}
   masterVolume: 0
   bgmVolume: 0
   sfxVolume: 0

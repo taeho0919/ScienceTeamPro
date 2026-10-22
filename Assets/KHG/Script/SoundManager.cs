@@ -43,7 +43,7 @@ public class SoundManager : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            Destroy(gameObject);
+            enabled = false;
             return;
         }
 
@@ -67,15 +67,18 @@ public class SoundManager : MonoBehaviour
         UpdateVolume();
     }
 
+    private bool IsProxy => instance != null && instance != this;
+
     private void OnEnable()
     {
+        if (IsProxy) return;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
-        volume = bgmSource.volume;
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        if (bgmSource != null) volume = bgmSource.volume;
     }
 
     private void Start()
@@ -113,6 +116,7 @@ public class SoundManager : MonoBehaviour
 
     public void SetMasterVolume(float value)
     {
+        if (IsProxy) { instance.SetMasterVolume(value); return; }
         masterVolume = Mathf.Clamp01(value);
         PlayerPrefs.SetFloat("MasterVolume", masterVolume);
         UpdateVolume();
@@ -120,6 +124,7 @@ public class SoundManager : MonoBehaviour
 
     public void SetBGMVolume(float value)
     {
+        if (IsProxy) { instance.SetBGMVolume(value); return; }
         bgmVolume = Mathf.Clamp01(value);
         PlayerPrefs.SetFloat("BGMVolume", bgmVolume);
         UpdateVolume();
@@ -127,6 +132,7 @@ public class SoundManager : MonoBehaviour
 
     public void SetSFXVolume(float value)
     {
+        if (IsProxy) { instance.SetSFXVolume(value); return; }
         sfxVolume = Mathf.Clamp01(value);
         PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
         UpdateVolume();

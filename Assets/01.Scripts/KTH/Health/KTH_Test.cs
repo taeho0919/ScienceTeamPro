@@ -1,12 +1,23 @@
 using System;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KTH_Test : MonoBehaviour
+public class KTH_Test : MonoBehaviour, ISerializationCallbackReceiver
 {
     [SerializeField]private KTH_HealthSystem  healthSystem;
-    [SerializeField] private SceneAsset s;
+#if UNITY_EDITOR
+    [SerializeField] private UnityEditor.SceneAsset s;
+#endif
+    [SerializeField, HideInInspector] private string sceneName;
+
+    public void OnBeforeSerialize()
+    {
+#if UNITY_EDITOR
+        sceneName = s != null ? s.name : string.Empty;
+#endif
+    }
+
+    public void OnAfterDeserialize() { }
     
     private static KTH_Test instance;
 
@@ -34,9 +45,9 @@ public class KTH_Test : MonoBehaviour
             healthSystem.TakeDamage(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && s != null)
+        if (Input.GetKeyDown(KeyCode.F) && !string.IsNullOrEmpty(sceneName))
         {
-            SceneManager.LoadScene(s.name);
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

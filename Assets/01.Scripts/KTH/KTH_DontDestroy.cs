@@ -40,7 +40,7 @@ public class KTH_DontDestroy : MonoBehaviour
 
     private void OnLoadScene(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "EndingScene" || scene.name == "DeathScene")
+        if (scene.name == "EndingScene" || scene.name == "DeathScene"||scene.name=="EndCutScene")
         {
             Destroy(gameObject);
             return;

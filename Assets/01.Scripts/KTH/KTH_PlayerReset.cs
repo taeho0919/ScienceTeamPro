@@ -1,11 +1,22 @@
 using System;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KTH_PlayerReset : MonoBehaviour
+public class KTH_PlayerReset : MonoBehaviour, ISerializationCallbackReceiver
 {
-    [SerializeField]private SceneAsset resetScene;
+#if UNITY_EDITOR
+    [SerializeField]private UnityEditor.SceneAsset resetScene;
+#endif
+    [SerializeField, HideInInspector] private string resetSceneName;
+
+    public void OnBeforeSerialize()
+    {
+#if UNITY_EDITOR
+        resetSceneName = resetScene != null ? resetScene.name : string.Empty;
+#endif
+    }
+
+    public void OnAfterDeserialize() { }
     [SerializeField]private int maxHealth;
 
     private KTH_HealthSystem  healthSystem;
@@ -29,7 +40,7 @@ public class KTH_PlayerReset : MonoBehaviour
 
     private void OnLoadScene(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == resetScene.name)
+        if (scene.name == resetSceneName)
         {
             healthSystem.Heal(maxHealth);
             transform.position = origin;

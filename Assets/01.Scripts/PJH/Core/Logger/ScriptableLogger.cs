@@ -12,30 +12,30 @@ namespace _01.Scripts.Core.Logger
         [field:SerializeField] public Color MessageColor { get; private set; }
 
 
-        
-        #if UNITY_EDITOR
+
         public void Log(string message)
         {
+            #if UNITY_EDITOR
             Debug.Log($"[<color=#{TitleColor.ToHexString()}>{Title}</color>] " +
                       $"<color=#{MessageColor.ToHexString()}>{message}</color>");
+            #endif
         }
-        #endif
 
-        #if UNITY_EDITOR
         public void LogWarning(string message)
         {
+            #if UNITY_EDITOR
             Debug.LogWarning($"[<color=#{TitleColor.ToHexString()}>{Title}</color>] " +
                              $"<color=#{MessageColor.ToHexString()}>{message}</color>");
+            #endif
         }
-        #endif
 
-        
-        #if UNITY_EDITOR
+
         public void LogError(string message)
         {
+            #if UNITY_EDITOR
             Debug.LogError($"[<color=#{TitleColor.ToHexString()}>{Title}</color>] " +
                            $"<color=#{MessageColor.ToHexString()}>{message}</color>");
+            #endif
         }
-        #endif
     }
 }

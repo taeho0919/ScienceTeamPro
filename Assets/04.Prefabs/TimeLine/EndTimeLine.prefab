@@ -173,6 +173,8 @@ PlayableDirector:
     value: {fileID: 5353680048339134397}
   - key: {fileID: 4907557974792057080, guid: 4cee7bbf37cf98e4d9c58e75fbea2abd, type: 2}
     value: {fileID: 4001809013443343989}
+  - key: {fileID: 1135901871854813570, guid: 4cee7bbf37cf98e4d9c58e75fbea2abd, type: 2}
+    value: {fileID: 8965803276555319202}
   - key: {fileID: -5048595208866700892, guid: 4cee7bbf37cf98e4d9c58e75fbea2abd, type: 2}
     value: {fileID: 4001809013443343989}
   - key: {fileID: 1135901871854813570, guid: 4cee7bbf37cf98e4d9c58e75fbea2abd, type: 2}
@@ -357,6 +359,7 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 20655f3c6ad1082489a9a362cd02978a, type: 2}
+    - {fileID: 11400000, guid: fc29f8357ed2cea459e8c15aa632e134, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -370,6 +373,20 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5972937552270214370}
+          m_TargetAssemblyTypeName: KTH_SceneNext, Assembly-CSharp
+          m_MethodName: NextScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument:
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &2094234044797298027
